@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
-const Header = () => {
+const Header = ({ hideNav }: { hideNav?: boolean }) => {
   const router = useRouter();
   return (
     <>
@@ -22,27 +22,29 @@ const Header = () => {
       </div>
 
       {/* Navigation */}
-      <nav className="flex justify-center pb-12">
-        <div className="flex items-center space-x-8 text-sm font-space-grotesk">
-          <Link href="/#about" className="hover:text-gray-300 transition-colors">
-            About Me
-          </Link>
+      {hideNav ? null : (
+        <nav className="flex justify-center pb-12">
+          <div className="flex items-center space-x-8 text-sm font-space-grotesk">
+            <Link href="/#about" className="hover:text-gray-300 transition-colors">
+              About Me
+            </Link>
 
-          <a
-            href="https://drip.haus/yns"
-            target="_blank"
-            className="hover:text-gray-300 transition-colors"
-          >
-            NFTs
-          </a>
-          <Link
-            href="/#contact"
-            className="border border-white px-4 py-2 rounded hover:bg-white hover:text-black transition-colors"
-          >
-            Let's Talk
-          </Link>
-        </div>
-      </nav>
+            <a
+              href="https://drip.haus/yns"
+              target="_blank"
+              className="hover:text-gray-300 transition-colors"
+            >
+              NFTs
+            </a>
+            <Link
+              href="/#contact"
+              className="border border-white px-4 py-2 rounded hover:bg-white hover:text-black transition-colors"
+            >
+              Let's Talk
+            </Link>
+          </div>
+        </nav>
+      )}
     </>
   );
 };

@@ -109,22 +109,20 @@ function PackageCard({
 }) {
   return (
     <div
-      className={`group relative flex flex-col justify-between rounded-xl border p-6 backdrop-blur-md transition-all duration-300 ease-out will-change-transform hover:-translate-y-1.5 ${
-        pkg.isPrimary
+      className={`group relative flex flex-col justify-between rounded-xl border p-6 backdrop-blur-md transition-all duration-300 ease-out will-change-transform hover:-translate-y-1.5 ${pkg.isPrimary
           ? "border-white/40 bg-zinc-900/70 shadow-[0_0_24px_rgba(255,255,255,0.06)] hover:border-white/60 hover:shadow-[0_16px_36px_-6px_rgba(255,255,255,0.15),0_0_35px_rgba(255,255,255,0.1)] hover:bg-zinc-900/90"
           : "border-white/[0.09] bg-zinc-950/60 shadow-[0_4px_20px_rgba(0,0,0,0.5)] hover:border-white/30 hover:shadow-[0_14px_32px_-6px_rgba(255,255,255,0.08),0_0_24px_rgba(255,255,255,0.05)] hover:bg-zinc-900/60"
-      }`}
+        }`}
     >
       <div className="pointer-events-none absolute -top-px left-6 right-6 h-px bg-gradient-to-r from-transparent via-white/0 to-transparent transition-all duration-300 group-hover:via-white/40" />
 
       <div>
         <div className="flex items-center justify-between gap-2 mb-3">
           <span
-            className={`text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded border font-space-grotesk ${
-              pkg.isPrimary
+            className={`text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded border font-space-grotesk ${pkg.isPrimary
                 ? "bg-white text-black border-white"
                 : "bg-zinc-900/90 text-gray-300 border-white/[0.08]"
-            }`}
+              }`}
           >
             {pkg.badge}
           </span>
@@ -207,7 +205,7 @@ export default function PricingPage() {
     <div className="relative min-h-screen text-zinc-100 selection:bg-white/20 selection:text-white">
       <Background />
 
-      <Header />
+      <Header hideNav={true} />
 
       <div className="mx-auto max-w-5xl px-5 sm:px-8 pb-6 sm:pb-10">
         <section className="mb-14 sm:mb-16 pt-2 sm:pt-4 text-center">
@@ -304,11 +302,10 @@ export default function PricingPage() {
       <div
         role="status"
         aria-live="polite"
-        className={`fixed bottom-6 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 pointer-events-none ${
-          showToast
+        className={`fixed bottom-6 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 pointer-events-none ${showToast
             ? "opacity-100 translate-y-0 scale-100"
             : "opacity-0 translate-y-3 scale-95"
-        }`}
+          }`}
       >
         <div className="flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-zinc-900/95 border border-white/20 shadow-[0_12px_32px_rgba(0,0,0,0.8),0_0_20px_rgba(255,255,255,0.06)] backdrop-blur-md text-sm font-medium text-white font-inter">
           <CheckCheck className="h-4 w-4 text-white shrink-0" />
