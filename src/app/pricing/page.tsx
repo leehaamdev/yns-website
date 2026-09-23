@@ -5,6 +5,7 @@ import { CheckCheck, Copy, Send } from "lucide-react";
 import Header from "../Header";
 import Footer from "../Footer";
 import Background from "./Background";
+import CalEmbed from "./CalEmbed";
 
 interface PackageTier {
   name: string;
@@ -14,25 +15,20 @@ interface PackageTier {
   cycle?: string;
   isPrimary?: boolean;
   features: string[];
-  footerLabel: string;
-  footerValue: string;
 }
 
 const standalonePackages: PackageTier[] = [
   {
     name: "Spark",
     badge: "Micro",
-    desc: "Logo identity animation",
+    desc: "Logo identity motion",
     price: "$450",
     features: [
-      "5–10s logo animation",
+      "5–10s logo motion",
       "4K & 2K resolution",
       "MOV & MP4 export",
-      "Custom sound design",
-      "3 business days delivery",
+      "3 day turnaround",
     ],
-    footerLabel: "Delivery",
-    footerValue: "3 Business Days",
   },
   {
     name: "Flow",
@@ -42,11 +38,8 @@ const standalonePackages: PackageTier[] = [
     features: [
       "10–15s social video",
       "Concept and storyboard",
-      "Custom sound design",
-      "4 business days delivery",
+      "4 day turnaround",
     ],
-    footerLabel: "Delivery",
-    footerValue: "4 Business Days",
   },
   {
     name: "Pulse",
@@ -57,11 +50,8 @@ const standalonePackages: PackageTier[] = [
     features: [
       "Up to 30s narrative",
       "Concept and storyboard",
-      "Custom sound design",
-      "5 business days delivery",
+      "5 day turnaround",
     ],
-    footerLabel: "Delivery",
-    footerValue: "5 Business Days",
   },
 ];
 
@@ -75,32 +65,26 @@ const retainerPackages: PackageTier[] = [
     features: [
       "Graphic design",
       "1 active request",
-      "24–48h delivery",
-      "Native Figma files",
+      "24h turnaround",
       "Pause or cancel anytime",
     ],
-    footerLabel: "Turnaround",
-    footerValue: "24–48 Hours",
   },
   {
     name: "Motion Retainer",
     badge: "Popular",
-    desc: "Ongoing product animation queue",
+    desc: "Ongoing product motion queue",
     price: "$2,600",
     cycle: "/ mo",
     isPrimary: true,
     features: [
       "Motion graphics",
       "1 active request",
-      "3-day draft delivery",
-      "Custom sound design",
+      "3-5 day turnaround",
       "Pause or cancel anytime",
     ],
-    footerLabel: "Turnaround",
-    footerValue: "3-Day Drafts",
   },
   {
-    name: "Hybrid Partner",
+    name: "Full Spectrum",
     badge: "Full Suite",
     desc: "Complete motion & graphic pipeline",
     price: "$3,200",
@@ -108,12 +92,9 @@ const retainerPackages: PackageTier[] = [
     features: [
       "Motion & graphic design",
       "1 active request",
-      "24–48h static / 3d motion",
-      "AE & Figma source files",
-      "Direct Telegram channel",
+      "24h / 3-5 day turnaround",
+      "Pause or cancel anytime",
     ],
-    footerLabel: "Turnaround",
-    footerValue: "24–48h / 3 Days",
   },
 ];
 
@@ -136,32 +117,38 @@ function PackageCard({
     >
       <div className="pointer-events-none absolute -top-px left-6 right-6 h-px bg-gradient-to-r from-transparent via-white/0 to-transparent transition-all duration-300 group-hover:via-white/40" />
 
-      <div className="flex items-center justify-between gap-2 mb-3">
-        <span
-          className={`text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded border font-space-grotesk ${
-            pkg.isPrimary
-              ? "bg-white text-black border-white"
-              : "bg-zinc-900/90 text-gray-300 border-white/[0.08]"
-          }`}
-        >
-          {pkg.badge}
-        </span>
-
-        <button
-          type="button"
-          onClick={() => onCopy(pkg)}
-          title="Copy inquiry for Telegram"
-          className="opacity-0 group-hover:opacity-100 transition-opacity text-zinc-400 hover:text-white p-1"
-        >
-          {isCopied ? (
-            <CheckCheck className="h-3.5 w-3.5 text-white" />
-          ) : (
-            <Copy className="h-3.5 w-3.5" />
-          )}
-        </button>
-      </div>
-
       <div>
+        <div className="flex items-center justify-between gap-2 mb-3">
+          <span
+            className={`text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded border font-space-grotesk ${
+              pkg.isPrimary
+                ? "bg-white text-black border-white"
+                : "bg-zinc-900/90 text-gray-300 border-white/[0.08]"
+            }`}
+          >
+            {pkg.badge}
+          </span>
+
+          <button
+            type="button"
+            onClick={() => onCopy(pkg)}
+            aria-label={`Copy inquiry for ${pkg.name}`}
+            className="flex items-center gap-1.5 rounded-md px-2 py-1 text-xs font-medium text-gray-400 border border-transparent hover:border-white/20 hover:text-white hover:bg-white/[0.06] transition-colors"
+          >
+            {isCopied ? (
+              <>
+                <CheckCheck className="h-3.5 w-3.5 text-white" />
+                <span className="text-white font-space-grotesk">Copied!</span>
+              </>
+            ) : (
+              <>
+                <Copy className="h-3.5 w-3.5" />
+                <span className="font-space-grotesk">Inquire</span>
+              </>
+            )}
+          </button>
+        </div>
+
         <h3 className="text-lg sm:text-xl font-bold tracking-tight text-white font-space-grotesk">
           {pkg.name}
         </h3>
@@ -178,7 +165,7 @@ function PackageCard({
           </div>
         </div>
 
-        <ul className="space-y-2.5 text-sm text-gray-300 font-inter mb-6">
+        <ul className="space-y-2.5 text-sm text-gray-300 font-inter">
           {pkg.features.map((feature) => (
             <li key={feature} className="flex items-center gap-2.5">
               <span className="h-1.5 w-1.5 rounded-full bg-zinc-400 shrink-0" />
@@ -186,13 +173,6 @@ function PackageCard({
             </li>
           ))}
         </ul>
-      </div>
-
-      <div className="flex items-center justify-between pt-3 border-t border-white/[0.08] text-xs font-inter">
-        <span className="text-gray-400 font-medium">{pkg.footerLabel}</span>
-        <span className="text-white font-semibold font-space-grotesk tabular-nums">
-          {pkg.footerValue}
-        </span>
       </div>
     </div>
   );
@@ -239,7 +219,7 @@ export default function PricingPage() {
           </h1>
           <p className="text-gray-400 max-w-3xl text-base sm:text-lg font-inter leading-relaxed mx-auto">
             Built for brands with something to say. Bringing pixels to life with
-            clean, minimal, and modern animation.
+            clean, minimal, and modern motion.
           </p>
         </section>
 
@@ -312,6 +292,10 @@ export default function PricingPage() {
             time. Subscriptions can be paused or canceled prior to the next
             billing cycle.
           </p>
+        </div>
+
+        <div id="book" className="scroll-mt-12">
+          <CalEmbed />
         </div>
       </div>
 
