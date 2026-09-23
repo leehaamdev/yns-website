@@ -28,10 +28,6 @@ const Header = () => {
             About Me
           </Link>
 
-          <Link href="/pricing" className="hover:text-gray-300 transition-colors">
-            Pricing
-          </Link>
-
           <a
             href="https://drip.haus/yns"
             target="_blank"
