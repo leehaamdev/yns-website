@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 const Header = () => {
@@ -23,9 +24,13 @@ const Header = () => {
       {/* Navigation */}
       <nav className="flex justify-center pb-12">
         <div className="flex items-center space-x-8 text-sm font-space-grotesk">
-          <a href="./#about" className="hover:text-gray-300 transition-colors">
+          <Link href="/#about" className="hover:text-gray-300 transition-colors">
             About Me
-          </a>
+          </Link>
+
+          <Link href="/pricing" className="hover:text-gray-300 transition-colors">
+            Pricing
+          </Link>
 
           <a
             href="https://drip.haus/yns"
@@ -34,12 +39,12 @@ const Header = () => {
           >
             NFTs
           </a>
-          <a
-            href="./#contact"
+          <Link
+            href="/#contact"
             className="border border-white px-4 py-2 rounded hover:bg-white hover:text-black transition-colors"
           >
             Let's Talk
-          </a>
+          </Link>
         </div>
       </nav>
     </>

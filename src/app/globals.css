@@ -35,3 +35,16 @@ body {
 @theme {
   --text-tiny: 0.625rem;
 }
+
+@keyframes borderGlowSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-glow-border {
+  animation: borderGlowSpin 3s linear infinite;
+}
