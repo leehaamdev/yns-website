@@ -73,7 +73,7 @@ const retainerPackages: PackageTier[] = [
     name: "Motion Retainer",
     badge: "Popular",
     desc: "Ongoing product motion queue",
-    price: "$3,200",
+    price: "$2,950",
     cycle: "/ mo",
     isPrimary: true,
     features: [
@@ -87,7 +87,7 @@ const retainerPackages: PackageTier[] = [
     name: "Full Spectrum",
     badge: "Full Suite",
     desc: "Complete motion & graphic pipeline",
-    price: "$4,250",
+    price: "$3,950",
     cycle: "/ mo",
     features: [
       "Motion & graphic design",
