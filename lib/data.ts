@@ -14,7 +14,7 @@ export interface IProject {
 
 export const portfolioItems: IProject[] = [
     {
-    id: 1,
+    id: 20,
     placeholder:
       "https://res.cloudinary.com/dbhenrihl/image/upload/v1791665007/KurateV2_uspoic.gif",
     videoLink: "https://res.cloudinary.com/dbhenrihl/video/upload/v1791664378/KurateV2_jjkiav.mp4",
@@ -58,7 +58,7 @@ export const portfolioItems: IProject[] = [
     ],
   },
   {
-    id: 18,
+    id: 19,
     placeholder:
       "https://res.cloudinary.com/dbhenrihl/image/upload/v1787141864/BraceSoft_2_qm7di3.gif",
     videoLink: "https://res.cloudinary.com/dbhenrihl/video/upload/v1787141705/BraceSoftMotionFinal_wsgpkq.mp4",
