@@ -21,6 +21,7 @@ export const portfolioItems: IProject[] = [
     title: "Kurate Finance",
     description:
       "The Defi Layer for European Stablecoins.",
+    role: "Motion Designer · Sound Designer · Concept Designer",
     frames: [ 
     ],
   },
