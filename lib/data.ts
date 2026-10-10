@@ -74,17 +74,14 @@ export const portfolioItems: IProject[] = [
     {
     id: 18,
     placeholder:
-      "https://res.cloudinary.com/dbhenrihl/image/upload/v1778347285/PhoenixThumbnail_ptahjk.gif",
-    videoLink: "https://res.cloudinary.com/dbhenrihl/video/upload/v1778346373/WTIOILPhoenixV2_d3i5kl.mp4",
-    title: "phoenix.trade",
+      "https://res.cloudinary.com/dbhenrihl/image/upload/v1791666410/BP_bznltn.gif",
+    videoLink: "https://res.cloudinary.com/dbhenrihl/video/upload/v1791665909/London_whcyqh.mp4",
+    title: "Breakpoint 2026",
     description:
-      "Solana’s on-chain perpetuals exchange",
+      "Solana event",
     role: "Motion Designer",
-    link: { url: "https://x.com/PhoenixTrade/status/2053929435456590287?s=20", title: "Check It on X" },
+    link: { url: "https://x.com/ynsgh_/status/2104165795618058499?s=20", title: "Check It on X" },
     frames: [
-      "https://res.cloudinary.com/dbhenrihl/image/upload/v1778411468/ss_k360ov.png",
-      "https://res.cloudinary.com/dbhenrihl/image/upload/v1778411317/framePhoenix_x3jtqc.gif",
-      "https://res.cloudinary.com/dbhenrihl/image/upload/v1778411466/sce_lng4n0.png",
     ],
   },
   {
