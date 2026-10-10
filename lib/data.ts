@@ -13,6 +13,17 @@ export interface IProject {
 }
 
 export const portfolioItems: IProject[] = [
+    {
+    id: 1,
+    placeholder:
+      "https://res.cloudinary.com/dbhenrihl/image/upload/v1791665007/KurateV2_uspoic.gif",
+    videoLink: "https://res.cloudinary.com/dbhenrihl/video/upload/v1791664378/KurateV2_jjkiav.mp4",
+    title: "Kurate Finance",
+    description:
+      "The Defi Layer for European Stablecoins.",
+    frames: [ 
+    ],
+  },
   {
     id: 1,
     placeholder:
