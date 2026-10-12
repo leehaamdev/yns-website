@@ -25,7 +25,10 @@ const Header = ({ hideNav }: { hideNav?: boolean }) => {
       {hideNav ? null : (
         <nav className="flex justify-center pb-12">
           <div className="flex items-center space-x-8 text-sm font-space-grotesk">
-            <Link href="/#about" className="hover:text-gray-300 transition-colors">
+            <Link
+              href="/#about"
+              className="hover:text-gray-300 transition-colors"
+            >
               About Me
             </Link>
 

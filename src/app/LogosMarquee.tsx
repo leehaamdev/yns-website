@@ -23,14 +23,14 @@ export default function LogosMarquee() {
             height={33}
             className="opacity-80 hover:opacity-100 transition"
           />
-           <Image
+          <Image
             src="/solanaFoundationLogo.svg"
             alt="Solana Logo"
             width={109}
             height={33}
             className="opacity-80 hover:opacity-100 transition"
           />
-            <Image
+          <Image
             src="/trust_phoenix.svg"
             alt="Phoenix Logo"
             width={109}

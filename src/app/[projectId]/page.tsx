@@ -19,14 +19,6 @@ const ProjectPage = () => {
       <Header />
       {item && (
         <div className="max-w-[1300px] mx-auto mt-10">
-          {/* <Image
-            src={item.imageUrl}
-            alt={item.title}
-            width={1286}
-            height={724}
-            className="object-cover transition-transform duration-500 group-hover:scale-110 rounded-lg"
-          /> */}
-
           <div className="mx-auto p-4">
             <YouTubePlayer url={item.videoLink} />
           </div>
@@ -34,9 +26,6 @@ const ProjectPage = () => {
           <div className="my-32 max-w-3xl mx-auto flex flex-col gap-4 px-4">
             <h1 className="text-xl font-bold">{item.title}</h1>
             <p className="text-sm">{item.description}</p>
-            <h3>
-              <strong>Role:</strong> {item.role}
-            </h3>
 
             {item.link && (
               <a
@@ -50,8 +39,6 @@ const ProjectPage = () => {
           </div>
 
           <div className="my-32 mx-auto flex flex-col gap-4">
-            <h1 className="text-xl font-bold text-center">Frames</h1>
-
             <div>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                 {item.frames.map((item, idx) => (

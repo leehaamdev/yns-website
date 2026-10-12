@@ -61,7 +61,11 @@ export default function Background() {
           />
           <feColorMatrix type="saturate" values="0" />
         </filter>
-        <rect width="100%" height="100%" filter="url(#pricingGrainyNoiseFine)" />
+        <rect
+          width="100%"
+          height="100%"
+          filter="url(#pricingGrainyNoiseFine)"
+        />
       </svg>
     </div>
   );
