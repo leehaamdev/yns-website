@@ -20,9 +20,6 @@ export const portfolioItems: IProject[] = [
       "https://res.cloudinary.com/dbhenrihl/video/upload/v1791664378/KurateV2_jjkiav.mp4",
     title: "Kurate Finance",
     description: "The Defi Layer for European Stablecoins.",
-     link: {
-          url: "https://x.com/kurate_finance/status/2110008053349453988?s=20",
-      title: "Check It on X",
     frames: [],
   },
   {
